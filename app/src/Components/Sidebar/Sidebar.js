@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Sidebar.css'
 import SidebarOption from './SidebarOption'
 
@@ -13,7 +13,28 @@ import AppsIcon from '@material-ui/icons/Apps';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AddIcon from '@material-ui/icons/Add';
+import db from '../../firebase.js'
 function Sidebar() {
+    const [channels, setChannels] = useState([])
+    // ----console.log(db.collection('rooms').onSnapshot)
+    // Run this code when the sidebar component loads. This will be runned once.
+    useEffect(()=> {    
+        // Acces the db AND go into the collection called 'rooms' AND take a snapshot of the database AND when the database changes it will give us a new Snap shot
+        // So whenever something in the database changes, this useEffect function will be fired off
+        // On snapshot and for each snapshot
+        db.collection('rooms').onSnapshot(snapshot=> (
+            // ---console.log(snapshot)
+            // Take the snapshot and for the snapshot access the DOCUMENT in the database. Collection > Document > Field
+            setChannels(
+                // Now map the document(each Channel). Here we are accessing the channel
+                snapshot.docs.map()
+            )
+        )
+    }, [])
+    // [] here is the dependencies, so when its an empty array, it will only run once when loaded
+    // if you changed it to [name, age], it will run everytime when the name variable changes
+
     return (
         <div className="sidebar">
             <div className="sidebar__header">
@@ -36,6 +57,9 @@ function Sidebar() {
             <SidebarOption Icon={ExpandLessIcon} title="Show less"/>
             <hr />
             <SidebarOption Icon={ExpandMoreIcon} title="Channels"/>
+            <hr />
+            <SidebarOption Icon={AddIcon} title="Add Channel"/>
+            {/* Connect to the DB and add in all the channels based on the firebase */}
         </div>
     )
 }
