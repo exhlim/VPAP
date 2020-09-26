@@ -1,6 +1,7 @@
 /* body {
     --slack-color: #3f0f40
 } */
+/* Display flex to parent component, and use margin left auto to shift the element all the way to the right and still maintain responsiveness */
 .header {
     display: flex;
     align-items: center;
@@ -9,7 +10,6 @@
     background-color: var(--slack-color);
     color: white;
 }
-
 .header-left {
     display: flex;
     flex: 0.3;

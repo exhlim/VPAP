@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-import Header from "./Header"
+import Header from "./Components/Header/Header"
+import Sidebar from './Components/Sidebar/Sidebar'
 function App() {
   return (
     <div className="App">
       <Header />
-      {/* Header Component */}
-      {/* Side bar Component */}
-      {/* React-router for chats */}
-      {/*  */}
+      <div className="app-body">
+        <Sidebar />
+        {/* Chat componenet */}
+        {/* React-router for chats */}
+      </div>
     </div>
   );
 }
