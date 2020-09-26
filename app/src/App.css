@@ -1,0 +1,5 @@
+/* Using App.css to defind the slack color. Encasing it in the body means that it is only accessible to the body component */
+/* This var can also be defined in the Header.css as well */
+body {
+  --slack-color: #3f0f40
+}
