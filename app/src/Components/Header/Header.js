@@ -7,20 +7,19 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 function Header() {
     return (
         <div className="header">
-            <div className="header-left">
+            <div className="header__left">
                 <Avatar 
-                    className="header-avatar"
+                    className="header__avatar"
                     alt="Eugene Lim"
                     src=""
-
                 />
                 <AccessTimeIcon/>
             </div>
-            <div className="header-search">
+            <div className="header__search">
                 <SearchIcon />
                 <input placeholder="Search..." name=""/>
             </div>
-            <div className="header-right">
+            <div className="header__right">
                 <HelpOutlineIcon />
             </div>
         </div>

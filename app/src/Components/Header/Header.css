@@ -10,17 +10,19 @@
     background-color: var(--slack-color);
     color: white;
 }
-.header-left {
+
+.header__left {
     display: flex;
     flex: 0.3;
     align-items: center;
     margin-left: 20px;
 }
-.header-left > .MuiSvgIcon-root {
+.header__left > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
 }
-.header-search {
+
+.header__search {
     display: flex;
     flex: 0.4;
     border: 1px solid grey;
@@ -30,7 +32,7 @@
     background-color: #421f44;
     color: grey;
 }
-.header-search > input {
+.header__search > input {
     background-color: transparent;
     border: none;
     text-align: center;
@@ -38,11 +40,11 @@
     color: white;
 }
 
-.header-right {
+.header__right {
     display: flex;
     flex: 0.3;
 }
-.header-right > .MuiSvgIcon-root {
+.header__right > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 20px;
 }
