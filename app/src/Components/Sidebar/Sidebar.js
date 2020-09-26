@@ -20,17 +20,21 @@ function Sidebar() {
     // ----console.log(db.collection('rooms').onSnapshot)
     // Run this code when the sidebar component loads. This will be runned once.
     useEffect(()=> {    
-        // Acces the db AND go into the collection called 'rooms' AND take a snapshot of the database AND when the database changes it will give us a new Snap shot
+        // Acces the db . go into the collection called 'rooms' . take a snapshot of the database . when the database changes it will give us a new Snap shot
         // So whenever something in the database changes, this useEffect function will be fired off
-        // On snapshot and for each snapshot
+                                // On snapshot and for each snapshot
         db.collection('rooms').onSnapshot(snapshot=> (
             // ---console.log(snapshot)
-            // Take the snapshot and for the snapshot access the DOCUMENT in the database. Collection > Document > Field
+            // Take the snapshot and for the snapshot to access the DOCUMENT in the database. Collection > Document > Field
             setChannels(
-                // Now map the document(each Channel). Here we are accessing the channel
-                snapshot.docs.map()
+                // Now accessing all the documents and map each document(for each Channel). Here we are accessing the channel
+                snapshot.docs.map(doc=> ({
+                    // For every single doc create an object and return it into "channels"  variable to give us an array of objects, or a list of channels
+                    id: doc.id,
+                    name: doc.data().name
+                }))
             )
-        )
+        ))
     }, [])
     // [] here is the dependencies, so when its an empty array, it will only run once when loaded
     // if you changed it to [name, age], it will run everytime when the name variable changes
@@ -60,6 +64,9 @@ function Sidebar() {
             <hr />
             <SidebarOption Icon={AddIcon} title="Add Channel"/>
             {/* Connect to the DB and add in all the channels based on the firebase */}
+            {channels.map(channel=> (
+                <SidebarOption title={channel.name} id={channel.id}/>
+            ))}
         </div>
     )
 }
