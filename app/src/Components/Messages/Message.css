@@ -3,7 +3,9 @@
     align-items: center;
     padding: 20px
 }
-
+.message__info {
+    padding-left: 10px;
+}
 .message > img {
     height: 50px;
     width: 50px;
@@ -13,7 +15,4 @@
     font-weight: 300;
     color: grey;
     font-size: 13px;
-}
-.message__info {
-    padding-left: 10px;
 }
