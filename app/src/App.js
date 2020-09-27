@@ -3,10 +3,14 @@ import './App.css';
 import Header from "./Components/Header/Header"
 import Sidebar from './Components/Sidebar/Sidebar'
 import Chat from "./Components/Chat/Chat"
+import { useStateValue } from './StateProvider'
 import { Route, Switch, BrowserRouter as Router} from 'react-router-dom'
 import Login from "./Components/Login/Login"
 function App() {
-  const [user, setUser] = useState(null)
+  // useStateValue is what we already set in the StateProvider
+  // This is what we use to access the 'global' information
+  // {user} is to destructure the state which contains the user that we defined in the reducer
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="App">
       <Router>
