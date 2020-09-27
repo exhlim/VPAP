@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './Sidebar.css'
 import SidebarOption from './SidebarOption'
+import {useParams} from 'react-router-dom'
+import db from '../../firebase.js'
+import './Sidebar.css'
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import CreateIcon from '@material-ui/icons/Create';
@@ -14,8 +16,8 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
-import db from '../../firebase.js'
-function Sidebar() {
+
+function Sidebar() { 
     const [channels, setChannels] = useState([])
     // ----console.log(db.collection('rooms').onSnapshot)
     // Run this code when the sidebar component loads. This will be runned once.
@@ -38,7 +40,6 @@ function Sidebar() {
     }, [])
     // [] here is the dependencies, so when its an empty array, it will only run once when loaded
     // if you changed it to [name, age], it will run everytime when the name variable changes
-
     return (
         <div className="sidebar">
             <div className="sidebar__header">
@@ -62,10 +63,10 @@ function Sidebar() {
             <hr />
             <SidebarOption Icon={ExpandMoreIcon} title="Channels"/>
             <hr />
-            <SidebarOption Icon={AddIcon} title="Add Channel"/>
+            <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel"/>
             {/* Connect to the DB and add in all the channels based on the firebase */}
             {channels.map(channel=> (
-                <SidebarOption title={channel.name} id={channel.id}/>
+                <SidebarOption title={channel.name} id={channel.id} key={channel.id}/>
             ))}
         </div>
     )
