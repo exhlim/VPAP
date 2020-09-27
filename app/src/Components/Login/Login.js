@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import { Button } from '@material-ui/core'
 import { auth, provider } from "../../firebase"
+import { useStateValue } from "../../StateProvider"
+import { actionTypes } from "../../reducer"
 function Login() {
+    const [state, dispatch] = useStateValue()
     const signIn=()=> {
         auth.signInWithPopup(provider)
-        .then(result=> [
+        .then(result=> {
             console.log(result)
-        ]).catch((error)=> {
+            dispatch({
+                // define the action type that you set in the reducer
+                type: actionTypes.SET_USER,
+                // set the user as result.user
+                user: result.user
+            })
+        }).catch((error)=> {
             alert(error.message)
         })
     }

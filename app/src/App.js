@@ -10,7 +10,7 @@ function App() {
   // useStateValue is what we already set in the StateProvider
   // This is what we use to access the 'global' information
   // {user} is to destructure the state which contains the user that we defined in the reducer
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   return (
     <div className="App">
       <Router>

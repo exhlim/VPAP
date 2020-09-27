@@ -3,6 +3,7 @@ import SidebarOption from './SidebarOption'
 import {useParams} from 'react-router-dom'
 import db from '../../firebase.js'
 import './Sidebar.css'
+import {useStateValue} from "../../StateProvider"
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import CreateIcon from '@material-ui/icons/Create';
@@ -19,6 +20,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 function Sidebar() { 
     const [channels, setChannels] = useState([])
+    const [{user}] = useStateValue();
     // ----console.log(db.collection('rooms').onSnapshot)
     // Run this code when the sidebar component loads. This will be runned once.
     useEffect(()=> {    
@@ -47,7 +49,7 @@ function Sidebar() {
                     <h2>General Assembly</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Eugene Lim
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon />
