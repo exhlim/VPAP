@@ -14,13 +14,15 @@ function ChatInput({channelName, channelId}) {
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 user: user.displayName,
                 userImage: user.photoURL,
-            })
+            }) 
         }
+        setInput("")
     }  
     return (
         <div className="chatinput">
             <form>
                 <input type="text" 
+                value={input}
                 onChange={(e)=> setInput(e.target.value)}
                 placeholder={`Message #${channelName?.toLowerCase()}`}/>
                 <button type="submit" onClick={sendMessage}>Send</button>
