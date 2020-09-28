@@ -7,3 +7,12 @@ body {
   display: flex;
   height: 93vh;
 }
+.intro {
+  margin-left: 20px;
+  margin-top: 20px;
+  line-height: 40px;
+  font-weight: 600;
+}
+.intro > h1 {
+  text-decoration: underline;
+}

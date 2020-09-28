@@ -6,6 +6,7 @@ import Chat from "./Components/Chat/Chat"
 import { useStateValue } from './StateProvider'
 import { Route, Switch, BrowserRouter as Router} from 'react-router-dom'
 import Login from "./Components/Login/Login"
+import Intro from './intro'
 function App() {
   // useStateValue is what we already set in the StateProvider
   // This is what we use to access the 'global' information
@@ -27,7 +28,7 @@ function App() {
               </Route>
 
               <Route path="/">
-                  <h1>Welcome to my slack clone</h1>
+                  <Intro />
               </Route>
               </Switch>
               </div>
