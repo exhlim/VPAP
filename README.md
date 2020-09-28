@@ -1,12 +1,8 @@
 # Slack Clone #
 
-## About ##
-
-Hosted [here](https://slack-clone-exhlim.web.app/) on firebase. Login with your google account to access the project.
-
 ## Motivation ##
 
-Welcome to my slack clone. I built this application to have a better understanding of the implementation of chatting functionalities as well as an opportunity to use React context API and learn a different way of using google authentication sign in compared to my previous "Gmail Clone with keyword sorting feature" project.
+Welcome to my slack clone [here](https://slack-clone-exhlim.web.app/). I built this application to have a better understanding of the implementation of chatting functionalities as well as an opportunity to use React context API and learn a different way of using google authentication sign in compared to my previous "Gmail Clone with keyword sorting feature" project.
 
 ## Technologies: ##
 
@@ -29,5 +25,5 @@ Welcome to my slack clone. I built this application to have a better understandi
 
 ## Preview ##
 
-![](gif1.gif)
-![](gif1.gif)
+![](./app/public/gif1.gif)
+
