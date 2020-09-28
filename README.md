@@ -16,11 +16,11 @@ Welcome to my slack clone [here](https://slack-clone-exhlim.web.app/). I built t
 
 ## Functionalities: ##
 
- - Google auth sign in.
- - Adding of channels (Add channel).
- - Switching between the added channels.
- - Chatting functionality from real time database(Firebase).
- - Chat information of users pulled after google auth.
+ - Google auth sign in
+ - Adding of channels (Add channel)
+ - Switching between the added channels
+ - Chatting functionality from real time database(Firebase)
+ - Chat information of users pulled after google auth
  - Rendering of google account image and name in header
 
 ## Preview ##
