@@ -25,5 +25,5 @@ Welcome to my slack clone [here](https://slack-clone-exhlim.web.app/). I built t
 
 ## Preview ##
 
-![](./app/public/gif1.gif)
+![](./app/public/gif2.gif)
 
