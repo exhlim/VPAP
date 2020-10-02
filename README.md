@@ -2,7 +2,7 @@
 
 ## Motivation ##
 
-Welcome to my slack clone [here](https://slack-clone-exhlim.web.app/). I built this application to have a better understanding of the implementation of chatting functionalities as well as an opportunity to use React context API and learn a different way of using google authentication sign in compared to my previous "Gmail Clone with keyword sorting feature" project.
+Welcome to my slack clone [here](https://slack-clone-exhlim.web.app/). I built this application to have a better understanding of the implementation of chatting functionalities as well as an opportunity to use React context API and learn a different way of using google authentication sign in compared to my previous "Gmail Clone with keyword sorting feature" project. (Preview below)
 
 ## Technologies: ##
 
